@@ -1,0 +1,5 @@
+(defun C:RECTANGULO()
+  (setq punto1 (getpoint "\nSelecciona un punto de inicio: "))
+  (setq punto2 (getpoint "\nSelecciona un punto de fin: "))
+  (command "rectang" punto1 punto2)
+  )

@@ -1,0 +1,8 @@
+(defun C:LAMINA()
+  (setq P1 (getpoint "Punto inferior izquierdo"))
+  (setq P2 (getpoint "Punto superior derecho"))
+  (command "_RECTANG" P1 P2)
+  (setq P3 (list (+ 2.5 (nth 0 P1)) (+ 1 (nth 1 P1))))
+  (setq P4 (list (- (nth 0 P2) 1) (- (nth 1 P2) 1)))
+  (command "_RECTANG" P3 P4)
+  )
