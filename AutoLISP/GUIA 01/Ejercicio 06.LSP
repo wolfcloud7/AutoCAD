@@ -1,0 +1,13 @@
+(defun c:FIGGEOM (/ opcion)
+  (princ "\n1.Triángulo 2.Cuadrado 3.Rectángulo 4.Pentágono 5.Hexágono")
+  (initget 1 "1 2 3 4 5")
+  (setq opcion (getkword "\nOpción (1-5): "))
+  (cond
+    ((= opcion "1") (command "_POLYGON" 3 (getpoint "\nCentro: " ) "I" (/ (getdist "\nLado: ") (* 2 (sin (/ pi 3))))))
+    ((= opcion "2") (command "_POLYGON" 4 (getpoint "\nCentro: " ) "I" (/ (getdist "\nLado: ") (sqrt 2))))
+    ((= opcion "3") (command "_RECTANG"   (getpoint "\nEsquina: ")     (getcorner "\nEsquina opuesta: ")))
+    ((= opcion "4") (command "_POLYGON" 5 (getpoint "\nCentro: " ) "I" (/ (getdist "\nLado: ") (* 2 (sin (/ pi 5))))))
+    ((= opcion "5") (command "_POLYGON" 6 (getpoint "\nCentro: " ) "I" (getdist "\nLado: ")))
+  )
+  (princ)
+)
